@@ -1,5 +1,5 @@
-CREATE FUNCTION sprint3_gold.calculate_tax(amount FLOAT64)
-RETURNS FLOAT64 AS (amount * 1.21);
+CREATE OR REPLACE FUNCTION sprint3_gold.calculate_tax(amount FLOAT64)
+RETURNS FLOAT64 AS (ROUND(amount * 1.21, 2));
 
 CREATE OR REPLACE TABLE sprint3_gold.dim_transactions_flat AS
 SELECT
